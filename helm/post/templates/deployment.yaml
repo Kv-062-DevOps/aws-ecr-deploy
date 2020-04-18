@@ -1,0 +1,44 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "post.fullname" . }}
+  labels:
+    {{- include "post.labels" . | nindent 4 }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{- include "post.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "post.selectorLabels" . | nindent 8 }}
+    spec:
+      imagePullSecrets:
+        - name: awsecr-cred
+      containers:
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image.repository }}:{{ .Chart.AppVersion }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: "POSTPORT"
+              value: "{{ .Values.POSTPORT }}"
+            - name: "BACKPORT"
+              value: "{{ .Values.BACKPORT }}"
+            - name: "BACKADDR"
+              value: "{{ .Values.BACKADDR }}"
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+
