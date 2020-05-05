@@ -13,6 +13,9 @@ After that you can find it and configure in you Github:
 https://github.com/settings/installations  
 Apply DeliveryBot only for repositories that you need.  
 
+All your installations and settings for repositories will be here:  
+https://app.deliverybot.dev/
+
 2. Setup your own Kubernetes cluster.  
 
 3. Create a service account for GitHub actions to have access to your cluster as described here:  
