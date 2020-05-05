@@ -37,7 +37,7 @@ g) test it with command:
 `KUBECONFIG=/tmp/kube/k8s-deliverybot-default-conf kubectl get pods`
 
 h) get secrets and copy all output:  
-`cat /tmp/kube/k8s-mydeliverybotjqd-default-conf`  
+`cat /tmp/kube/k8s-deliverybot-default-conf`  
 Put all this output in Secert in you Github Repository settings, save with name `KUBECONFIG`  
 
 ### 4. Create and configure the structure of GitHub action:  
