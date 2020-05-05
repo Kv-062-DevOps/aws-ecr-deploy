@@ -1,11 +1,11 @@
-###See DeliveryBot examples:  
+### See DeliveryBot examples:  
 https://github.com/deliverybot/example  
 https://github.com/deliverybot/example-helm  
 Main parameters and info on the official page:  
 https://deliverybot.dev/docs/integrations/action-helm/  
 
-###DO:  
-###1. Visit web page and click INSTALL application:  
+### DO:  
+### 1. Visit web page and click INSTALL application:  
 https://github.com/apps/deliverybot  
 Grant access for Deliverybot to your github account.  
 
@@ -16,9 +16,9 @@ Apply DeliveryBot only for repositories that you need.
 All your installations and settings for repositories will be here:  
 https://app.deliverybot.dev/
 
-###2. Setup your own Kubernetes cluster.  
+### 2. Setup your own Kubernetes cluster.  
 
-###3. Create a service account for GitHub actions to have access to your cluster as described here:  
+### 3. Create a service account for GitHub actions to have access to your cluster as described here:  
 https://gist.github.com/innovia/fbba8259042f71db98ea8d4ad19bd708  
 
 a) save shell script `kubernetes_add_service_account_kubeconfig.sh`:  
@@ -43,13 +43,13 @@ h) get secrets and copy all output:
 `cat /tmp/kube/k8s-mydeliverybotjqd-default-conf`  
 Put all this output in Secert in you Github Repository settings, save with name `KUBECONFIG`  
 
-###4. Create and configure the structure of GitHub action:  
+### 4. Create and configure the structure of GitHub action:  
 ```
 config/                   # Contains value files per environment.
 .github/workflows/cd.yml  # GitHub action workflow.
 .github/deploy.yml        # Deliverybot configuration file.
 ```
-###5. Deploy your application to your cluster by push :-)  
+### 5. Deploy your application to your cluster by push :-)  
 
 
 
