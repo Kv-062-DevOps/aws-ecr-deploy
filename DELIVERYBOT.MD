@@ -1,5 +1,4 @@
-### See DeliveryBot examples:  
-https://github.com/deliverybot/example  
+### See DeliveryBot example:  
 https://github.com/deliverybot/example-helm  
 Main parameters and info on the official page:  
 https://deliverybot.dev/docs/integrations/action-helm/  
