@@ -4,7 +4,6 @@ https://github.com/deliverybot/example-helm
 Main parameters and info on the official page:  
 https://deliverybot.dev/docs/integrations/action-helm/  
 
-### DO:  
 ### 1. Visit web page and click INSTALL application:  
 https://github.com/apps/deliverybot  
 Grant access for Deliverybot to your github account.  
