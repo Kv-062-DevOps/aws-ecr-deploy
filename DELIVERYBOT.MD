@@ -17,9 +17,7 @@ https://app.deliverybot.dev/
 
 ### 2. Setup your own Kubernetes cluster.  
 
-### 3. Create a service account for GitHub actions to have access to your cluster as described here:  
-https://gist.github.com/innovia/fbba8259042f71db98ea8d4ad19bd708  
-
+### 3. Create a service account for GitHub actions to have access to your cluster:  
 a) save shell script `kubernetes_add_service_account_kubeconfig.sh`:  
 https://github.com/Kv-062-DevOps/aws-ecr-deploy/blob/master/deliverybot/kubernetes_add_service_account_kubeconfig.sh  
 
