@@ -1,0 +1,23 @@
+# Default values for db.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+port: 8083
+
+targetPort: 8083
+
+typePort: ClusterIP
+
+region: "local"
+
+host_port: "8083"
+
+secret_key: "anything"
+access_key: "anything"
+
+secretFile: "awsecr-cred"
+
+registry: "074368059797.dkr.ecr.eu-central-1.amazonaws.com/back"
+tag: "latest"
