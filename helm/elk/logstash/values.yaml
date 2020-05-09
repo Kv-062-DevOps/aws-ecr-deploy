@@ -57,10 +57,12 @@ logstashJavaOpts: "-Xmx1g -Xms1g"
 resources:
   requests:
     cpu: "100m"
-    memory: "1536Mi"
+    memory: "1Gi"
+#   memory: "1536Mi"
   limits:
     cpu: "1000m"
-    memory: "1536Mi"
+    memory: "1Gi"
+#   memory: "1536Mi"
 
 volumeClaimTemplate:
   accessModes: [ "ReadWriteOnce" ]
@@ -182,8 +184,10 @@ livenessProbe:
     path: /
     port: http
   initialDelaySeconds: 300
-  periodSeconds: 10
-  timeoutSeconds: 5
+  periodSeconds: 30
+# periodSeconds: 10
+  timeoutSeconds: 15
+# timeoutSeconds: 5
   failureThreshold: 3
   successThreshold: 1
 
@@ -192,8 +196,10 @@ readinessProbe:
     path: /
     port: http
   initialDelaySeconds: 60
-  periodSeconds: 10
-  timeoutSeconds: 5
+  periodSeconds: 30
+# periodSeconds: 10
+  timeoutSeconds: 15
+# timeoutSeconds: 5
   failureThreshold: 3
   successThreshold: 3
 

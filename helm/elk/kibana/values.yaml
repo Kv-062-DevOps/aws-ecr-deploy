@@ -40,11 +40,15 @@ podAnnotations: {}
 
 resources:
   requests:
-    cpu: "1000m"
-    memory: "2Gi"
+    cpu: "500m"
+    memory: "1Gi"
+#   cpu: "1000m"
+#   memory: "2Gi"
   limits:
-    cpu: "1000m"
-    memory: "2Gi"
+    cpu: "500m"
+    memory: "1Gi"
+#   cpu: "1000m"
+#   memory: "2Gi"
 
 protocol: http
 
@@ -122,10 +126,13 @@ ingress:
 
 readinessProbe:
   failureThreshold: 3
-  initialDelaySeconds: 10
-  periodSeconds: 10
+  initialDelaySeconds: 60
+# initialDelaySeconds: 10
+  periodSeconds: 30
+# periodSeconds: 10
   successThreshold: 3
-  timeoutSeconds: 5
+  timeoutSeconds: 15
+# timeoutSeconds: 5
 
 imagePullSecrets: []
 nodeSelector: {}

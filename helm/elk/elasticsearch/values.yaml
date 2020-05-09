@@ -63,11 +63,15 @@ esJavaOpts: "-Xmx1g -Xms1g"
 
 resources:
   requests:
-    cpu: "1000m"
-    memory: "2Gi"
+    cpu: "500m"
+    memory: "1Gi"
+#   cpu: "1000m"
+#   memory: "2Gi"
   limits:
-    cpu: "1000m"
-    memory: "2Gi"
+    cpu: "500m"
+    memory: "1Gi"
+#   cpu: "1000m"
+#   memory: "2Gi"
 
 initResources: {}
   # limits:
@@ -91,7 +95,8 @@ volumeClaimTemplate:
   accessModes: [ "ReadWriteOnce" ]
   resources:
     requests:
-      storage: 30Gi
+      storage: 9Gi
+#     storage: 30Gi
 
 rbac:
   create: false
@@ -148,7 +153,8 @@ antiAffinityTopologyKey: "kubernetes.io/hostname"
 
 # Hard means that by default pods will only be scheduled if there are enough nodes for them
 # and that they will never end up on the same node. Setting this to soft will do this "best effort"
-antiAffinity: "hard"
+#antiAffinity: "hard"
+antiAffinity: "soft"
 
 # This is the node affinity settings as defined in
 # https://kubernetes.io/docs/concepts/configuration/assign-pod-node/#node-affinity-beta-feature
@@ -199,10 +205,13 @@ sysctlVmMaxMapCount: 262144
 
 readinessProbe:
   failureThreshold: 3
-  initialDelaySeconds: 10
-  periodSeconds: 10
+  initialDelaySeconds: 60
+# initialDelaySeconds: 10
+  periodSeconds: 30
+# periodSeconds: 10
   successThreshold: 3
-  timeoutSeconds: 5
+  timeoutSeconds: 15
+# timeoutSeconds: 5
 
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/cluster-health.html#request-params wait_for_status
 clusterHealthCheckParams: "wait_for_status=green&timeout=1s"
