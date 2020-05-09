@@ -13,7 +13,10 @@ Apply DeliveryBot only for repositories that you need.
 
 All your installations and settings for repositories will be here:  
 https://app.deliverybot.dev/  
-_https://raw.githubusercontent.com/Kv-062-DevOps/aws-ecr-deploy/master/deliverybot/choose_deploy_type.jpg_  
+And can be managed by Deploy button as on the example picture:
+_https://github.com/Kv-062-DevOps/aws-ecr-deploy/blob/master/deliverybot/choose_deploy_type.jpg_  
+
+
 
 ### 2. Setup your own Kubernetes cluster.  
 

@@ -1,6 +1,8 @@
 # aws-ecr-deploy 
 Helm Charts to deploy services from the common Amazon Elastic Container Registry 
 
+##Application
+
 **Frontend** 
 [Kv-062-DevOps/aws-ecr-deploy/helm/front](https://github.com/Kv-062-DevOps/aws-ecr-deploy/tree/master/helm/front) 
 
@@ -13,12 +15,13 @@ Helm Charts to deploy services from the common Amazon Elastic Container Registry
 **Post Service** 
 [Kv-062-DevOps/aws-ecr-deploy/helm/post](https://github.com/Kv-062-DevOps/aws-ecr-deploy/tree/master/helm/post) 
 
-**Prometheus Monitoring** 
-[Kv-062-DevOps/aws-ecr-deploy/helm/prometheus](https://github.com/Kv-062-DevOps/aws-ecr-deploy/tree/master/helm/prometheus) 
+##Infrastructure 
 
-**Grafana Dashboard** 
-[Kv-062-DevOps/aws-ecr-deploy/helm/grafana](https://github.com/Kv-062-DevOps/aws-ecr-deploy/tree/master/helm/grafana) 
+**ELK Stack**
+[Kv-062-DevOps/aws-ecr-deploy/helm/elk](https://github.com/Kv-062-DevOps/aws-ecr-deploy/tree/master/helm/elk) 
 
+**Prometheus and Grafana** 
+[Kv-062-DevOps/aws-ecr-deploy/helm/prom-graf](https://github.com/Kv-062-DevOps/aws-ecr-deploy/tree/master/helm/prom-graf) 
 
 
  
