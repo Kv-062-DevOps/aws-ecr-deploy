@@ -17,7 +17,7 @@ Quick start DeliveryBot using:
 https://github.com/Kv-062-DevOps/aws-ecr-deploy/blob/master/DELIVERYBOT.MD
 
 **Pay attention:** With DeliveryBot each microservices of application are deploying from their source code GitHub repo! 
-NOT from these charts. These charts are using only for manual deployment through `helm install ...` command.
+Not from these charts. These charts are using only for manual deployment through `helm install ...` command.
 
 ### Application
 
