@@ -7,8 +7,8 @@ variable "name" {
 }
 
 variable "region" {
-  description = "The region where to deploy this code (e.g. us-east-1)."
-  default     = "us-east-1"
+  description = "The region where to deploy this code (e.g. eu-central-1)."
+  default     = "eu-central-1"
 }
 
 #variable "provider" {
@@ -16,7 +16,7 @@ variable "region" {
 #    default = {
 #        access_key = "unknown"
 #        secret_key = "unknown"
-#        region     = "us-east-1"
+#        region     = "eu-central-1"
 #    }
 #}
 
@@ -50,7 +50,8 @@ variable "enable_crossaccount_role" {
 variable "cross_acc_principal_arns" {
     description = "ARNs of accounts, groups, or users with the ability to assume this role."
     type        = "list"
-    default     = ["222222222222","arn:aws:iam::333333333333:user/MyUser"]
+    default     = ["893769753495","arn:aws:iam::893769753495:user/MyUser"]
+#   default     = ["222222222222","arn:aws:iam::333333333333:user/MyUser"]
 }
 
 variable "cross_acc_policy_arns" {
