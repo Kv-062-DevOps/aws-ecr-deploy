@@ -2,7 +2,8 @@
 # https://itnext.io/deploy-elastic-stack-on-kubernetes-1-15-using-helm-v3-9105653c7c8
 NAME=$2
 NS=log
-CHART=elastic/${NAME}
+CHART=${NAME}
+#CHART=elastic/${NAME}
 VERSION=v7.6.1
 VALUES=${NAME}/values.yaml
 RELEASE=$(helm ls | awk '{print $1}' | grep ${NAME})
@@ -22,7 +23,10 @@ fi
 
 case $1 in
 install)
-		helm install ${CHART} --namespace ${NS} -f ${VALUES} --version ${VERSION} --generate-name
+		#helm install ${CHART} --namespace ${NS} -f ${VALUES} --version ${VERSION} --generate-name
+     	#helm install --debug --dry-run ${NAME} --namespace ${NS} -f ${VALUES} --version ${VERSION} ${CHART}
+		#helm install --debug --dry-run ${NAME} --namespace ${NS} -f ${VALUES} --version ${VERSION} ${CHART} > ${NAME}-debug.yaml
+		helm install --debug ${NAME} --namespace ${NS} -f ${VALUES} --version ${VERSION} ${CHART} 
 		#helm install --debug --dry-run --name ${NAME} --namespace ${NS} -f ${NAME}.yaml ${CHART} > ${NAME}-debug.yaml
 		echo "Installed ${NAME}"
 		;;

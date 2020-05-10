@@ -7,3 +7,5 @@ index.yaml
 .idea/
 /venv
 .vscode/
+*debug.*
+
