@@ -26,7 +26,7 @@ install)
 		#helm install ${CHART} --namespace ${NS} -f ${VALUES} --version ${VERSION} --generate-name
      	#helm install --debug --dry-run ${NAME} --namespace ${NS} -f ${VALUES} --version ${VERSION} ${CHART}
 		#helm install --debug --dry-run ${NAME} --namespace ${NS} -f ${VALUES} --version ${VERSION} ${CHART} > ${NAME}-debug.yaml
-		helm install --debug ${NAME} --namespace ${NS} -f ${VALUES} --version ${VERSION} ${CHART} 
+		helm install ${NAME} --namespace ${NS} -f ${VALUES} --version ${VERSION} ${CHART} 
 		#helm install --debug --dry-run --name ${NAME} --namespace ${NS} -f ${NAME}.yaml ${CHART} > ${NAME}-debug.yaml
 		echo "Installed ${NAME}"
 		;;

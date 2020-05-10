@@ -13,8 +13,8 @@ helm uninstall ${DEPLOYED} --namespace ${NS}
 DEPLOYED=filebeat
 helm uninstall ${DEPLOYED} --namespace ${NS}
 
-DEPLOYED=metricbeat
-helm uninstall ${DEPLOYED} --namespace ${NS}
+#DEPLOYED=metricbeat
+#helm uninstall ${DEPLOYED} --namespace ${NS}
 
 kubectl get all --namespace ${NS}
 
