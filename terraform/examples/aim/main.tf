@@ -1,4 +1,8 @@
 #
+# Step 1: Create IAM Roles
+# https://www.bluematador.com/blog/iam-access-in-kubernetes-installing-kiam-in-production
+#
+# Based on the example:
 # https://linux-notes.org/rabota-s-aws-iam-i-terraform-v-unix-linux/
 #
 terraform {
@@ -14,7 +18,7 @@ provider "aws" {
 
 module "aim" {
   source      = "../../modules/iam"
-  name        = "TEST-AIM"
+  name        = "KIAM"
   region      = "eu-central-1"
   environment = "PROD"
 
@@ -36,9 +40,8 @@ module "aim" {
 
   # Enabling cross account role
   enable_crossaccount_role = "false"
-  cross_acc_principal_arns = ["893769753495", "arn:aws:iam::893769753495:user/test"]
-
-  # cross_acc_principal_arns = ["222222222222222","arn:aws:iam::333333333333:user/test"]
+  cross_acc_principal_arns = ["893769753495", "arn:aws:iam::893769753495:role/kiam_server"]
+  #cross_acc_principal_arns = ["222222222222222","arn:aws:iam::333333333333:user/test"]
   cross_acc_policy_arns = ["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser", "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"]
 }
 
