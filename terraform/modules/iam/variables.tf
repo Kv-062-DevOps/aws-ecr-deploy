@@ -21,42 +21,42 @@ variable "region" {
 #}
 
 variable "environment" {
-    description = "environment for service"
-    default     = "STAGE"
+  description = "environment for service"
+  default     = "STAGE"
 }
 
 variable "aws_iam_role-principals" {
   description = "List of allowed principals."
-  type        = "list"
+  type        = list(string)
 }
 
 variable "aws_iam_policy-resources" {
   description = "List of allowed resources."
-  type        = "list"
+  type        = list(string)
   default     = ["*"]
 }
 
 variable "aws_iam_policy-actions" {
   description = "List of allowed actions."
-  type        = "list"
+  type        = list(string)
   default     = ["*"]
 }
 
 variable "enable_crossaccount_role" {
-    description = "Enabling cross account role"
-    default     = "false"
+  description = "Enabling cross account role"
+  default     = "false"
 }
 
 variable "cross_acc_principal_arns" {
-    description = "ARNs of accounts, groups, or users with the ability to assume this role."
-    type        = "list"
-    default     = ["893769753495","arn:aws:iam::893769753495:user/MyUser"]
-#   default     = ["222222222222","arn:aws:iam::333333333333:user/MyUser"]
+  description = "ARNs of accounts, groups, or users with the ability to assume this role."
+  type        = list(string)
+  default     = ["893769753495", "arn:aws:iam::893769753495:user/MyUser"]
+  #   default     = ["222222222222","arn:aws:iam::333333333333:user/MyUser"]
 }
 
 variable "cross_acc_policy_arns" {
-    description = "List of ARNs of policies to be associated with the created IAM role"
-    type        = "list"
-    default     = ["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser", "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"]
+  description = "List of ARNs of policies to be associated with the created IAM role"
+  type        = list(string)
+  default     = ["arn:aws:iam::aws:policy/AmazonEC2ContainerRegistryPowerUser", "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"]
 }
 
