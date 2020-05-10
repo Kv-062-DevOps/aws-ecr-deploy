@@ -7,8 +7,9 @@ terraform {
 }
 
 provider "aws" {
-    region  = "us-east-1"
-    profile = "default"
+    region  = "eu-central-1"
+    profile = "root"
+#   profile = "default"
 }
 
 module "iam_role" {
