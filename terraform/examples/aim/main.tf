@@ -6,7 +6,7 @@ terraform {
 }
 provider "aws" {
     region  = "eu-central-1"
-    profile = "default"
+    profile = "root"
     # access_key = "${var.aws_access_key}"
     # secret_key = "${var.aws_secret_key}"
 }
