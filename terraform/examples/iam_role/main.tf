@@ -14,7 +14,7 @@ provider "aws" {
 
 module "iam_role" {
     source                                          = "../../modules/iam_role"
-    name                                            = "TEST-role"
+    name                                            = "KIAM"
     environment                                     = "stage"
 
     # Using IAM role
